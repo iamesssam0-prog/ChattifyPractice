@@ -28,7 +28,9 @@ app.get("/", (req, res) => {
     res.send("Hi from practice chatify");
 })
 
-mongoose.connect("mongodb://127.0.0.1:27017/chattifyPractice").then(() => {
+// mongoose.connect("mongodb://127.0.0.1:27017/chattifyPractice").then(() => {
+mongoose.connect(process.env.MONGO_URI).then(() => {
+
     console.log(`Mongo Db connected successfully ✅`)
 }).catch((err) => console.log("Mongo Db connection Error", err))
 
