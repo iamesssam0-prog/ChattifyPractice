@@ -52,24 +52,7 @@ const ChatLists = () => {
                     {/* لو عايز تستخدم الأحمر ده درجة تحفة: bg-[#ff4d4d] */}
                 </div>
             ))}
-            {/* {chats.map((chat) => (
-                <div key={chat._id} className='flex items-center gap-3
-                mb-5 mt-3 bg-cyan-800/40 py-4 px-5 rounded-lg cursor-pointer 
-                hover:bg-cyan-800/80 duration-300 transition-all 
-                '
-                    onClick={() => setSelectedUser(chat)}
-                >
-                    <div className={`w-3 h-3 rounded-full 
-                    absolute top-50 left-18
-                    ${onlineUsers.includes(chat._id.toString()) ?
-                            "bg-green-500" : "bg-red-600"
-                        }`} />
-                    <img src={chat.profilePic ? chat.profilePic : avatar} alt=""
-                        className='object-cover w-12 h-12 rounded-full'
-                    />
-                    <h2 className='text-white'>{chat.fullName}</h2>
-                </div>
-            ))} */}
+
         </div>
     )
 }
