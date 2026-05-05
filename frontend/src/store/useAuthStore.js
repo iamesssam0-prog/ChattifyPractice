@@ -16,7 +16,7 @@ export const useAuthStore = create((set, get) => ({
         set({ isCheckingAuth: true });
         const token = localStorage.getItem("token");
         try {
-            const res = await axios.get("http://localhost:4000/api/users/userProfile",
+            const res = await axios.get("https://chattifypractice-backend.onrender.com/api/users/userProfile",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -38,7 +38,7 @@ export const useAuthStore = create((set, get) => ({
         set({ isSigningIn: true })
 
         try {
-            const res = await axios.post("http://localhost:4000/api/users/register", data);
+            const res = await axios.post("https://chattifypractice-backend.onrender.com/api/users/register", data);
             localStorage.setItem("token", res.data.token);
             set({ authUser: res.data.user });
             const { user } = res.data;
@@ -56,7 +56,7 @@ export const useAuthStore = create((set, get) => ({
     login: async (data) => {
         set({ isLogingIn: true })
         try {
-            const res = await axios.post("http://localhost:4000/api/users/login",
+            const res = await axios.post("https://chattifypractice-backend.onrender.com/api/users/login",
                 data
             );
             localStorage.setItem("token", res.data.token);
@@ -86,7 +86,7 @@ export const useAuthStore = create((set, get) => ({
 
     updateProfile: async (image) => {
         try {
-            const res = await axios.post("http://localhost:4000/api/users/updateProfile",
+            const res = await axios.post("https://chattifypractice-backend.onrender.com/api/users/updateProfile",
                 image
                 , {
                     headers: {
@@ -125,7 +125,7 @@ export const useAuthStore = create((set, get) => ({
         // بنجيب التوكن من الـ localStorage
         const token = localStorage.getItem("token");
 
-        const socket = io("http://localhost:4000", {
+        const socket = io("https://chattifypractice-backend.onrender.com", {
             auth: {
                 token: token // ده اللي الـ Middleware بتاعك مستنيه
             },

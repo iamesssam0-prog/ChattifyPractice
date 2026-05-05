@@ -18,7 +18,7 @@ export const useChatStore = create((set, get) => ({
 
     getAllContacts: async () => {
         try {
-            const res = await axios.get("http://localhost:4000/api/messages/contacts",
+            const res = await axios.get("https://chattifypractice-backend.onrender.com/api/messages/contacts",
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -35,7 +35,7 @@ export const useChatStore = create((set, get) => ({
     getMyChatPartners: async () => {
         set({ isUsersLoading: true });
         try {
-            const res = await axios.get("http://localhost:4000/api/messages/chats",
+            const res = await axios.get("https://chattifypractice-backend.onrender.com/api/messages/chats",
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -54,7 +54,7 @@ export const useChatStore = create((set, get) => ({
     getMessagesByUserId: async (userId) => {
         set({ isMessagesLoading: true });
         try {
-            const res = await axios.get(`http://localhost:4000/api/messages/${userId}`,
+            const res = await axios.get(`https://chattifypractice-backend.onrender.com/api/messages/${userId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -89,7 +89,7 @@ export const useChatStore = create((set, get) => ({
         set({ messages: [...messages, optimisticMessage] });
 
         try {
-            const res = await axios.post(`http://localhost:4000/api/messages/send/${selectedUser._id}`,
+            const res = await axios.post(`https://chattifypractice-backend.onrender.com/api/messages/send/${selectedUser._id}`,
                 messageData,
                 {
                     headers: {
@@ -146,7 +146,7 @@ export const useChatStore = create((set, get) => ({
 
         try {
 
-            const res = await axios.delete("http://localhost:4000/api/messages/deleteMessage", {
+            const res = await axios.delete("https://chattifypractice-backend.onrender.com/api/messages/deleteMessage", {
 
                 data: { messageId, selectedUser: selectedUser._id },
 
