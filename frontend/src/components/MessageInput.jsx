@@ -12,24 +12,6 @@ const MessageInput = () => {
 
     const { sendMessages } = useChatStore();
 
-    // const handleSendMessage = (e) => {
-    //     e.preventDefault();
-    //     if (!text.trim() && !image) return;
-
-    //     const formData = new FormData();
-    //     formData.append('image', image);
-
-    //     sendMessages({
-    //         text: text.trim(),
-    //         image: image
-    //     })
-    //     setText("");
-    //     setImage(false);
-
-    //     if (fileInputRef.current) fileInputRef.current.value = "";
-    // }
-
-
     const handleSendMessage = (e) => {
         e.preventDefault();
         if (!text.trim() && !image) return;
